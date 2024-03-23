@@ -59,10 +59,22 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #6c757d;
+  color: #2c2c2c;
   text-align: left;
-  background-color: #fff;
+  background-color: #ebe9e9;
   
+}
+.header__info::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 400px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: var(--primary);
+  z-index: -1;
+  clip-path: polygon(100% 0, 100% 50%, 50% 100%, 0 100%);
 }
 /*ESTILOS DE SWITCH*/
 .switch {
@@ -75,12 +87,12 @@ body {
   justify-content: space-between;
   position: relative;
   border-radius: 100px;
-  border: #333 solid 2px;
+  border: #333 solid 1px;
   background-color: #132b41;
 }
 .switch i {
   font-size: 1rem;
-  color: #fdc21c;
+  color: #45afe0;
 }
 .navbar-nav li:last-child::before {
   content: "";
@@ -102,10 +114,10 @@ body {
   color: #fff;
 }
 body.active nav {
-  background-color: #313131;
+  background-color: #858484;
 }
-body.active nav a {
-  color: #cfcfcf;
+body.active .navbar-toggler {
+  background-color: var(--primary)
 }
 body.active .header__info {
   background-color: #2c2c2c;
@@ -116,6 +128,33 @@ body.active .header__info h1 {
 body.active .main__info {
   background-color: #2c2c2c;
 }
+body.active .main__info h1 {
+  color: var(--primary);
+}
+body.active .main__info h3 {
+  color: #cfcfcf;
+}
+body.active .main__info p {
+  color: #cfcfcf;
+}
+body.active .main__info h6 {
+  color: #cfcfcf;
+}
+body.active .main__info h5 {
+  color: var(--primary);
+}
+body.active .main__info h4 {
+  color: var(--primary);
+}
+body.active .footer__info {
+  background-color: #494747;
+}
+body .footer__info {
+  background-color: #2c2c2c;
+}
+
+
+
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
