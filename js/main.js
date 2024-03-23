@@ -83,14 +83,13 @@
         return false;
     });
 
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        dots: true,
-        loop: true,
-        items: 1
-    });
+    //Dark mode
+    const swith = document.querySelector(".switch")
+
+    swith.addEventListener("click", e => {
+        swith.classList.toggle("active")
+        document.body.classList.toggle("active")
+    })
     
 })(jQuery);
 
