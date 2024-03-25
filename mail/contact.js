@@ -1,8 +1,8 @@
 $(function () {
-
     $("#contactForm input, #contactForm textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function ($form, event, errors) {
+            // No es necesario realizar ninguna acción específica en caso de error de validación
         },
         submitSuccess: function ($form, event) {
             event.preventDefault();
@@ -36,10 +36,10 @@ $(function () {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                             .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
+                    $('#success > .alert-danger').append($("<strong>").text("Lo siento " + name + ", parece que nuestro servidor de correo no está respondiendo. ¡Por favor, inténtalo de nuevo más tarde!"));
                     $('#success > .alert-danger').append('</div>');
                     $('#contactForm').trigger("reset");
-                },
+                },                
                 complete: function () {
                     setTimeout(function () {
                         $this.prop("disabled", false);
