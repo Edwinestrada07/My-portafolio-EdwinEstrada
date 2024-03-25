@@ -86,10 +86,30 @@
     //Dark mode
     const swith = document.querySelector(".switch")
 
-    swith.addEventListener("click", e => {
-        swith.classList.toggle("active")
-        document.body.classList.toggle("active")
+
+    //save dark mode to storage
+    document.addEventListener("DOMContentLoaded", e => {
+        loadDarkModeLocalStorage()
+        swith.addEventListener("click", toggleDarkMode)
     })
     
+    function toggleDarkMode () {
+        swith.classList.toggle("active")
+        document.body.classList.toggle("active")
+        saveDarkModeLocalStorage(swith.classList.contains("active"))
+    }
+
+    function saveDarkModeLocalStorage(state) {
+        localStorage.setItem("darkMode", state)
+    }
+
+    function loadDarkModeLocalStorage () {
+        const darkModeSave = localStorage.getItem("darkMode") === "true"
+        if (darkModeSave) {
+            swith.classList.add("active")
+            document.body.classList.add("active")
+        }
+    }
+
 })(jQuery);
 
